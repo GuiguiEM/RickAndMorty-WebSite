@@ -25,7 +25,7 @@ async function render({characters}) {
     characters.forEach((character) => {
 
         return charsContainer.innerHTML += `
-        <div class="char">
+        <div class="char" data-charId="${character.id}">
             <img src="${character.image}" alt="" />
             <div class="char-info">
               <h3>${character.name}</h3>
@@ -35,6 +35,13 @@ async function render({characters}) {
         `
 
     })
+    charsContainer.querySelectorAll('.char').forEach((char) => {
+        char.addEventListener('click', () => {
+          const charId = char.getAttribute('data-charId')
+          window.location.href = `./detalhesPersonagem/index.html?id=${charId}`
+        })
+      })
+      
 }
 
 async function handleLoadMore(){
@@ -69,6 +76,8 @@ function addListeners(){
         handleFilterChange('status', event)()
     })
 
+
+
     loadMoreButton.addEventListener('click', handleLoadMore)
 }
 
@@ -79,3 +88,5 @@ async function main(){
 }
 
 main()
+
+{/* <div class="char"> */}
