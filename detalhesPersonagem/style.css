@@ -39,4 +39,29 @@
     max-width: 1144px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
   }
+
+  #character-details > img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+  }
+
+  #character-details .p{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pagination {
+    margin-top: 1em;
+    display: flex;
+    gap: 1em;
+  }
+  
+  .pagination button {
+    padding: 0.5em 1em;
+    cursor: pointer;
+  }
+  
