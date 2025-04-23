@@ -67,22 +67,21 @@
 
   /* ******************************************************************************************* */
 
-  .character-details{
-    width: 100vh;
-    height: 100vh;
+  .character{
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .separation{
+  .character > img{
+    width: 234px;
+    height: 234px;
+    border-radius: 50%;
+    background-size: cover;
+  }
+
+  .separacao{
     display: flex;
     justify-content: space-evenly;
   }
 
-  .character-details > img{
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background-size: cover;
-  }

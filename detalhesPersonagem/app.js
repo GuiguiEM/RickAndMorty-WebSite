@@ -45,16 +45,23 @@ async function renderCharacter() {
   characterEpisodes = await getEpisodes(character.episode)
 
   detailsContainer.innerHTML = `
-    <img src="${character.image}" alt="${character.name}" />
-    <h1>${character.name}</h1>
-    <p><strong>Espécie:</strong> ${character.species}</p>
-    <p><strong>Status:</strong> ${character.status}</p>
-    <p><strong>Gênero:</strong> ${character.gender}</p>
-    <p><strong>Origem:</strong> ${character.origin.name}</p>
-    <p><strong>Localização Atual:</strong> ${character.location.name}</p>
-    <div id="episodes-container">
-      ${renderEpisodes(characterEpisodes, currentPage)}
-    </div>
+    <div class="character">
+              <img src="${character.image}" alt="${character.name}" />
+              <h1>${character.name}</h1>
+            </div>
+            <div class="separacao">
+              <div class="details">
+                <h2>Informations</h2>
+                <p><strong>Espécie:</strong> ${character.species}</p>
+                <p><strong>Status:</strong> ${character.status}</p>
+                <p><strong>Gênero:</strong> ${character.gender}</p>
+                <p><strong>Origem:</strong> ${character.origin.name}</p>
+                <p><strong>Localização Atual:</strong> ${character.location.name}</p>
+              </div>
+              <div id="episodes-container">
+                ${renderEpisodes(characterEpisodes, currentPage)}
+              </div>
+            </div>
   `
 
   addPaginationEvents()
